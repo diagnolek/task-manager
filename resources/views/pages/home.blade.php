@@ -16,7 +16,7 @@
 
                     {{ __('You are logged in!') }}
                     <div>
-                        <a href="{{route('task.list')}}" >Go to manager task</a>
+                        <a href="{{route('task.manage')}}" >Go to manage tasks</a>
                     </div>
                 </div>
             </div>

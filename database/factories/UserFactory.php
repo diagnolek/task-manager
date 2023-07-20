@@ -42,7 +42,7 @@ class UserFactory extends Factory
         return $this->state([
             'name' => 'admin',
             'email' => 'admin@example.com',
-            'password' => bcrypt('costam'),
+            'password' => bcrypt('password'),
         ]);
     }
 }

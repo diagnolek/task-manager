@@ -19,13 +19,5 @@ Auth::routes([
 ]);
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [\App\Http\Controllers\TaskController::class, 'dashboard'])->name('task.manage');
 
-Route::group(['prefix'=>'/task', 'middleware'=>'auth'], function(){
-    Route::get('/list', [\App\Http\Controllers\TaskController::class, 'index'])->name('task.list');
-    Route::get('/create', [\App\Http\Controllers\TaskController::class, 'create'])->name('task.create');
-    Route::post('/create', [\App\Http\Controllers\TaskController::class, 'store']);
-    Route::get('/{id}',[\App\Http\Controllers\TaskController::class, 'edit'])->name('task.edit');
-    Route::put('/{id}',[\App\Http\Controllers\TaskController::class, 'update']);
-    Route::get('/show/{id}', [\App\Http\Controllers\TaskController::class, 'show'])->name('task.show');
-    Route::get('/delete/{id}',[\App\Http\Controllers\TaskController::class, 'destroy'])->name('task.delete');
-});

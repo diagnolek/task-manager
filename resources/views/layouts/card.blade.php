@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="card <?=$cardColor ?? 'card-primary'?> <?=$cardType ?? 'card-outline'?>">
+  <div class="card m-4 <?=$cardColor ?? 'card-primary'?> <?=$cardType ?? 'card-outline'?>">
     @hasSection('header')
       <div class="card-header">
         @yield('header')
