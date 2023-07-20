@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+  web:
+    container_name: apptask-web
+    build:
+        context: .
+    image: apptask:config
+    ports:
+      - "8008:80"
+      - "5173:5173"
+    volumes:
+      - .:/var/www/html
+    working_dir: /var/www/html
