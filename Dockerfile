@@ -5,11 +5,14 @@ RUN apt-get update && apt-get install -y \
     curl \
     libicu-dev \
     libzip-dev \
-    unzip
+    unzip \
+    redis-server
 
 RUN docker-php-ext-configure intl \
     && docker-php-ext-install intl \
     && docker-php-ext-install zip
+
+RUN pecl install redis && docker-php-ext-enable redis
 
 RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get install -y nodejs
